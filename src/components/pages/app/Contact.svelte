@@ -1,4 +1,5 @@
 <script>
+  let isOpen = false;
   let formData = {
     name: '',
     email: '',
@@ -13,8 +14,33 @@
     event.preventDefault();
     // Aquí puedes manejar el envío del formulario
     console.log(formData);
+    isOpen = !isOpen;
   }
+
+  
 </script>
+
+<div class="{isOpen ? 'offcanvas offcanvas-start show' : 'offcanvas offcanvas-start'}" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close text-reset" aria-label="Close" on:click={handleSubmit}></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="mb-3 page-title">
   <h4>Contacto</h4>
