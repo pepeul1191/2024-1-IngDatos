@@ -1,11 +1,6 @@
-<!-- Sidebar.svelte -->
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>
 
 <aside id="sidebar" class="js-sidebar">
   <!-- Content For Sidebar -->
