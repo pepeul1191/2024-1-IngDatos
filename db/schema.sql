@@ -1,0 +1,82 @@
+CREATE TABLE IF NOT EXISTS "schema_migrations" (version varchar(128) primary key);
+CREATE TABLE levels (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  name	VARCHAR(30)
+);
+CREATE TABLE body_parts (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  name	VARCHAR(30)
+);
+CREATE TABLE exercises (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  name	VARCHAR(40),
+  image_url VARCHAR(50),
+  video_url VARCHAR(80),
+  description TEXT,
+  body_part_id	INTEGER NOT NULL,
+  FOREIGN KEY (body_part_id) REFERENCES body_parts (id)
+);
+CREATE TABLE members (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  code	INTEGER,
+  dni	VARCHAR(8),
+  names VARCHAR(30),
+  last_names VARCHAR(45),
+  email VARCHAR(50),
+  phone VARCHAR(30),
+  image_url VARCHAR(50),
+  level_id	INTEGER NOT NULL,
+  FOREIGN KEY (level_id) REFERENCES levels (id)
+);
+CREATE TABLE users (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  user	VARCHAR(30),
+  password	VARCHAR(30),
+  member_id	INTEGER NOT NULL, activation_key VARCHAR(20), reset_key VARCHAR(20),
+  FOREIGN KEY (member_id) REFERENCES members (id)
+);
+CREATE TABLE exercises_members (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  reps	INTEGER,
+  sets	INTEGER,
+  exercise_id	INTEGER NOT NULL,
+  member_id	INTEGER NOT NULL,
+  FOREIGN KEY (member_id) REFERENCES members (id),
+  FOREIGN KEY (exercise_id) REFERENCES exercises (id)
+);
+CREATE TABLE months (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  name	VARCHAR(15)
+);
+CREATE TABLE years (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  name	INTEGER
+);
+CREATE TABLE periods (
+  id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  year_id	INTEGER NOT NULL,
+  month_id	INTEGER NOT NULL,
+  FOREIGN KEY (month_id) REFERENCES months (id),
+  FOREIGN KEY (year_id) REFERENCES years (id)
+);
+-- Dbmate schema migrations
+INSERT INTO "schema_migrations" (version) VALUES
+  ('20231021124813'),
+  ('20231021124919'),
+  ('20231021124936'),
+  ('20231021124945'),
+  ('20231021130012'),
+  ('20231021130222'),
+  ('20231021141030'),
+  ('20231021141253'),
+  ('20231021141727'),
+  ('20231021142140'),
+  ('20231021142351'),
+  ('20231021142401'),
+  ('20240110124333'),
+  ('20240110124343'),
+  ('20240110124422'),
+  ('20240110124429'),
+  ('20240110125344'),
+  ('20240110125501'),
+  ('20240401032045');

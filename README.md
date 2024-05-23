@@ -15,96 +15,79 @@ cd svelte-app
 
 *Note that you will need to have [Node.js](https://nodejs.org) installed.*
 
+### Descipción
 
-## Get started
+En caso de usar el servicio en python:
 
-Install the dependencies...
+    $ sudo pip install virtualenv
+    $ virtualenv -p python3 <<nombre_ambiente>>
+    $ cd <<nombre_ambiente>>
+    $ source bin/activate
 
-```bash
-cd svelte-app
-npm install
+Arrancar aplicación con servidor Werkzeug:
+
+    $ cd <<carpeta-proyecto>>
+    $ pip install -r requirements.txt
+    $ python app.py
+
+Arrancer aplicación con servidor GreenUnicorn:
+
+    $ cd <<carpeta-proyecto>>
+    $ pip install -r requirements.txt
+    # Sin logs ni reload
+    $ gunicorn app:APP -w 6 -b 0.0.0.0:3000
+    # Con logs y reload
+    $ gunicorn app:APP -w 6 -b 0.0.0.0:3000 --reload --access-logfile -
+
+### PyLint
+
+    $ pylint <archivo>.py --reports=yes
+    $ pylint **/*.py --reports=yes
+
+### OAuth Responses
+
+https://www.googleapis.com/oauth2/v1/userinfo
+
+```
+{
+    "id": "7891273891273891273",
+    "email": "xyz@gmail.com",
+    "verified_email": true,
+    "name": "alkdjfa asdlfkjasdklf",
+    "given_name": "alkdjfa",
+    "family_name": "asdlfkjasdklf",
+    "picture": "https://lh3.googleusercontent.com/a-/AOh14GhaGAqhpkQfOw3DRemDILu_0aq2eTvfZdkGmRVe",
+    "locale": "es"
+}
 ```
 
-...then start [Rollup](https://rollupjs.org):
+### .env
 
-```bash
-npm run dev
-```
+Archivo <b>.env</b>
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+DB="sqlite:///db/demo.db"
+ENV="local"||"server"
+MAIL_PORT=465
+MAIL_USER="xyz@gmail.com"
+MAIL_PASS="asdfas"
+MAIL_HOST="smtp.google.com"
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+### Migraciones
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+Migraciones con DBMATE - accesos/sqlite3:
 
-## Building and running in production mode
+    $ npm run dbmate:new <<nombre_de_migracion>>
+    $ npm run dbmate:up
+    $ npm run dbmate:rollback
 
-To create an optimised version of the app:
+---
 
-```bash
-npm run build
-```
+Fuentes:
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte).
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
++ https://github.com/pepeul1191/flask-boilerplate-v2
++ https://www.pylint.org/#install
++ https://stackabuse.com/reading-and-writing-yaml-to-a-file-in-python/
++ https://github.com/pepeul1191/python-bottle-boilerplate
 
 
 ---
