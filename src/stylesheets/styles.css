@@ -54,6 +54,10 @@ h4 {
     background: var(--bs-dark-bg-subtle);
 }
 
+main{
+    padding-top: 20px !important;
+}
+
 /* Sidebar Elements Style */
 
 .sidebar-logo {
@@ -104,6 +108,10 @@ a.sidebar-link {
 .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
     transform: rotate(45deg);
     transition: all .2s ease-out;
+}
+
+.sidebar-item li{
+    padding-left: 20px;
 }
 
 .avatar {
@@ -196,4 +204,28 @@ html[data-bs-theme="dark"] .theme-toggle .fa-moon {
 
 html[data-bs-theme="light"] .theme-toggle .fa-sun {
     display: none;
+}
+
+/* content */
+
+.card{
+    border-radius: 0px;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color) !important;
+}
+
+.card-header, .card-body{
+    padding: 20px;
+}
+
+.page-title{
+    padding-top: 5px;
+    margin-bottom: -5px !important;
+}
+
+main{
+    background-color: #f9f9f9;
+}
+
+footer{
+    background-color: #f9f9f9;
 }

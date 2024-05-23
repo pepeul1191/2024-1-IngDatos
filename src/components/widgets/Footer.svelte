@@ -1,4 +1,7 @@
-<script></script>
+<script>
+  import { navigate } from 'svelte-routing';
+</script>
+
 <style></style>
 
 <footer class="footer">
@@ -14,7 +17,9 @@
       <div class="col-6 text-end">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#" class="text-muted">Contact</a>
+            <a class="text-muted" href="/contact" on:click|preventDefault={() => {navigate('/contact')}}>
+              Contacto
+            </a>
           </li>
           <li class="list-inline-item">
             <a href="#" class="text-muted">About Us</a>

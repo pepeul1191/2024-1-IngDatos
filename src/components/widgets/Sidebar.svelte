@@ -1,4 +1,6 @@
-<script></script>
+<script>
+  import { navigate } from 'svelte-routing';
+</script>
 
 <style></style>
 
@@ -19,13 +21,16 @@
         </a>
       </li>
       <li class="sidebar-item">
-      <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
-          aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
-          Pages
-      </a>
+        <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+            aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+            Datos Maestros
+        </a>
+
       <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
         <li class="sidebar-item">
-          <a href="#" class="sidebar-link">Page 1</a>
+          <a class="sidebar-link" href="/level" on:click|preventDefault={() => {navigate('/level')}}>
+            Lista de Niveles
+          </a>
         </li>
         <li class="sidebar-item">
           <a href="#" class="sidebar-link">Page 2</a>

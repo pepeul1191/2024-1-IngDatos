@@ -21,6 +21,7 @@
     "bootstrap": "^5.3.3",
     "sirv-cli": "^2.0.0",
     "svelte": "^3.59.2",
+    "svelte-routing": "^2.13.0",
     "sveltestrap": "^5.11.3"
   }
 }
