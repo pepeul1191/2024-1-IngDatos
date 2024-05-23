@@ -15,9 +15,8 @@
         Admin Elements
       </li>
       <li class="sidebar-item">
-        <a href="#" class="sidebar-link">
-          <i class="fa-solid fa-list pe-2"></i>
-            Dashboard
+        <a class="sidebar-link" href="/" on:click|preventDefault={() => {navigate('/')}}>
+          Home
         </a>
       </li>
       <li class="sidebar-item">
