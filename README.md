@@ -105,3 +105,11 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+
+---
+
+Fuentes:
+
++ https://github.com/codzsword/bootstrap-admin-dashboard/tree/main
++ https://www.youtube.com/watch?v=4VN8ZdDse9M
