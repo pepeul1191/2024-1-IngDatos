@@ -24,6 +24,15 @@ def home():
   locals['jss'] = ['dist/web']
   return render_template('web.html', locals = locals)
 
+@view.route('/admin/level', methods=['GET'])
+@view.route('/admin', methods=['GET'])
+def app():
+  locals = {}
+  locals['title'] = 'Panel de Administración'
+  locals['csss'] = ['dist/app']
+  locals['jss'] = ['dist/app']
+  return render_template('app.html', locals = locals)
+
 @view.route('/error/access/<code>', methods=['GET'])
 def error_access(code):
   # lang = session_language(session)

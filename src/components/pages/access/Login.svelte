@@ -29,7 +29,7 @@
       });
       if(founded){
         messageClass = 'text-success'
-        window.location.href = '/';
+        window.location.href = '/admin';
         message = 'Usuario encontrado';
       }else{
         messageClass = 'text-danger'

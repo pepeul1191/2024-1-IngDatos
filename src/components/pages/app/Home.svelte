@@ -1,3 +1,7 @@
+<script></script>
+
+<style></style>
+
 <div class="mb-3">
   <h4>Admin Dashboard</h4>
 </div>

@@ -27,7 +27,7 @@
 
       <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
         <li class="sidebar-item">
-          <a class="sidebar-link" href="/level" on:click|preventDefault={() => {navigate('/level')}}>
+          <a class="sidebar-link" href="/admin/level" on:click|preventDefault={() => {navigate('/admin/level')}}>
             Lista de Niveles
           </a>
         </li>

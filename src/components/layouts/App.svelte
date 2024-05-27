@@ -7,7 +7,8 @@ import ThemeToggle from '../widgets/ThemeToggle.svelte';
 import Footer from '../widgets/Footer.svelte';
 import Home from '../pages/app/Home.svelte';
 import Level from '../pages/app/Level.svelte';
-import Contact from '../pages/app/Contact.svelte';
+
+export let basepath = '/admin';
 
 const toggleRootClass = () => {
   const current = document.documentElement.getAttribute('data-bs-theme');
@@ -57,10 +58,9 @@ onMount(() => {
     <Navbar />
     <main class="content px-3 py-2">
       <div class="container-fluid">
-        <Router>
+        <Router basepath="{basepath}">
           <Route path="/" component={Home} />
           <Route path="/level" component={Level} />
-          <Route path="/contact" component={Contact} />
         </Router>
       </div>
     </main>
