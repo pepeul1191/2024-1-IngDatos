@@ -1,6 +1,16 @@
-<script></script>
+<script>
+  import { onMount } from 'svelte';
+  import { navigate } from 'svelte-routing';
+  
+  onMount(() => {
+
+  });
+</script>
 <style></style>
 
+<svelte:head>
+	<title>Inicio</title>
+</svelte:head>
 <!-- Carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <ol class="carousel-indicators">

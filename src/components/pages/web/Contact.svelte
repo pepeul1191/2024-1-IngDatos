@@ -1,6 +1,16 @@
-<script></script>
+<script>
+  import { onMount } from 'svelte';
+  import { navigate } from 'svelte-routing';
+  
+  onMount(() => {
+
+  });
+</script>
 <style></style>
 
+<svelte:head>
+	<title>Contacto</title>
+</svelte:head>
 <section class="py-5">
   <div class="container">
     <div class="row">

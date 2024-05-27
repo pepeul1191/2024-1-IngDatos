@@ -4,8 +4,18 @@ from flask import Blueprint, render_template
 
 view = Blueprint('demo-app-index', __name__)
 
-#@view.route('/contact', methods=['GET'])
-#@view.route('/level', methods=['GET'])
+@view.route('/reset-password', methods=['GET'])
+@view.route('/sign-up', methods=['GET'])
+@view.route('/login', methods=['GET'])
+def access():
+  locals = {}
+  locals['title'] = 'Bienvenido'
+  locals['csss'] = ['dist/access']
+  locals['jss'] = ['dist/access']
+  return render_template('access.html', locals = locals)
+
+@view.route('/contact', methods=['GET'])
+@view.route('/about', methods=['GET'])
 @view.route('/', methods=['GET'])
 def home():
   locals = {}

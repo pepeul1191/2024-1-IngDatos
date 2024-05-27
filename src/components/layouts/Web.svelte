@@ -26,10 +26,13 @@ onMount(() => {
           <a class="nav-link active" aria-current="page" on:click|preventDefault={() => {navigate('/')}}>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" on:click|preventDefault={() => {navigate('/about')}}>Nosotros</a>
+          <a class="nav-link" href="/about" on:click|preventDefault={() => {navigate('/about')}}>Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" on:click|preventDefault={() => {navigate('/contact')}}>Contacto</a>
+          <a class="nav-link" href="/contact" on:click|preventDefault={() => {navigate('/contact')}}>Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Acceder</a>
         </li>
       </ul>
     </div>

@@ -119,4 +119,4 @@ const Web = {
 	}
 };
 
-export default [App, Web, ];
+export default [App, Web, Access, ];

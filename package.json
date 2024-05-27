@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w & gunicorn app:APP -w 6 -b 0.0.0.0:5000 --reload",
+    "svelte": "rollup -c -w",
     "start": "sirv public --no-clear",
     "dbmate:new": "npx dbmate -d \"db/migrations\" -e \"DB\" new ",
     "dbmate:up": "npx dbmate -d \"db/migrations\" -e \"DB\" up",
